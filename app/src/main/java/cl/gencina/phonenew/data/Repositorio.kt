@@ -1,7 +1,9 @@
 package cl.gencina.phonenew.data
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import cl.gencina.phonenew.data.local.PhoneDao
+import cl.gencina.phonenew.data.local.PhoneEntity
 import cl.gencina.phonenew.data.remote.PhoneApi
 
 class Repositorio(private val phoneApi : PhoneApi, private val phoneDao: PhoneDao) {
@@ -30,5 +32,9 @@ class Repositorio(private val phoneApi : PhoneApi, private val phoneDao: PhoneDa
             Log.e("repositorioError", response.body().toString())
         }
     }
+
+    fun getListaTelefonos() : LiveData<List<PhoneEntity>> = phoneDao.getAll()
+
+    fun getTelefono(id: Int) : LiveData<PhoneEntity> = phoneDao.getPhoneDetail(id)
 
 }
