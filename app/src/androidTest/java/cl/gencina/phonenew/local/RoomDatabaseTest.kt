@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
 
 //test unitario
+
 class RoomDatabaseTest {
 
         @get:Rule
@@ -32,7 +33,7 @@ class RoomDatabaseTest {
         fun setUp() {
             val context = ApplicationProvider.getApplicationContext<Context>()
             db = Room.inMemoryDatabaseBuilder(context, PhoneDatabase::class.java).build()
-            phoneDao = db.PhoneDao()
+            phoneDao = db.phoneDao()
         }
 
         @After
@@ -46,7 +47,7 @@ class RoomDatabaseTest {
             val phoneData = PhoneEntity(123,"test", 99999, "image",null,null,null)
 
             // When
-            phoneDao.insertBase(phoneData)
+            phoneDao.insert(phoneData)
 
             // Then
             phoneDao.getAll().observeForever {

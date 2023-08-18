@@ -10,7 +10,7 @@ import androidx.room.Query
 interface PhoneDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertBase(item : PhoneEntity)
+    suspend fun insert(item : PhoneEntity)
 
     @Query("UPDATE tabla_telefono SET description =:description , lastPrice = :lastPrice, credit = :credit WHERE id = :id" )
     suspend fun updatePhone(id: Int, description: String?, lastPrice: Int?, credit: Boolean? )

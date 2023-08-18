@@ -12,7 +12,7 @@ class TelefonoViewModel(application: Application): AndroidViewModel(application)
     private var repositorio : Repositorio
     init {
         val api = PhoneRetrofit.getRetrofit()
-        val database = PhoneDatabase.getDatabase(application).PhoneDao()
+        val database = PhoneDatabase.getDatabase(application).phoneDao()
         repositorio = Repositorio(api, database)
     }
 

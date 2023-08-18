@@ -5,6 +5,7 @@
     android:id="@+id/fl_item_detalle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ligth_primary_color"
     tools:context=".vista.DetalleFragment">
 
     <androidx.cardview.widget.CardView
@@ -73,10 +74,15 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
+        android:focusable="true"
         android:src="@android:drawable/ic_dialog_email"
+        android:tint="@color/text_icon"
+        android:tintMode="add"
+        app:backgroundTint="@color/dark_primary_color"
+        app:backgroundTintMode="add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:focusable="true" />
+        app:rippleColor="@color/text_icon" />
 
     <ScrollView
         android:id="@+id/sv_detalle"
@@ -96,7 +102,7 @@
 
             <ImageView
                 android:id="@+id/iv_detalle"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -109,10 +115,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:textAlignment="center"
-                android:textSize="24sp"
+                android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -122,8 +128,10 @@
                 android:id="@+id/tv_precio_antiguo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:textAlignment="textStart"
+                android:textColor="@color/accent_color"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -134,38 +142,38 @@
                 android:id="@+id/tv_precio_nuevo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:textAlignment="textStart"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/iv_detalle"
                 app:layout_constraintStart_toStartOf="@+id/iv_detalle"
-                app:layout_constraintTop_toBottomOf="@+id/iv_detalle" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_precio_antiguo" />
 
             <TextView
                 android:id="@+id/tv_tipo_credito"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:textAlignment="textStart"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_precio_nuevo"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/tv_descripcion"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/tv_precio_nuevo"
-                app:layout_constraintTop_toTopOf="@+id/tv_precio_nuevo"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_precio_nuevo" />
 
             <TextView
                 android:id="@+id/tv_descripcion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_precio_nuevo" />
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

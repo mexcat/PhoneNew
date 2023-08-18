@@ -14,7 +14,7 @@ class Repositorio(private val phoneApi : PhoneApi, private val phoneDao: PhoneDa
             val data = response.body()
             data?.let {telefono ->
                 telefono.map{
-                    phoneDao.insertBase(it.toEntity())
+                    phoneDao.insert(it.toEntity())
                 }
             }
         }else{
