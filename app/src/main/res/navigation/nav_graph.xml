@@ -9,5 +9,18 @@
         android:id="@+id/listaTelefonosFragment"
         android:name="cl.gencina.phonenew.vista.ListaTelefonosFragment"
         android:label="fragment_lista_telefonos"
-        tools:layout="@layout/fragment_lista_telefonos" />
+        tools:layout="@layout/fragment_lista_telefonos" >
+        <action
+            android:id="@+id/action_listaTelefonosFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="cl.gencina.phonenew.vista.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_detalleFragment_to_listaTelefonosFragment"
+            app:destination="@id/listaTelefonosFragment" />
+    </fragment>
 </navigation>

@@ -17,10 +17,16 @@ class ListaTelefonosFragment : Fragment() {
     ): View {
         binding = FragmentListaTelefonosBinding.inflate(layoutInflater, container, false)
         viewmodel.getData()
-        initApadter()
+        initAdapter()
         return binding.root
     }
 
-    private fun initApadter() {
+    private fun initAdapter() {
+        val  adapter = AdapterListaTelefonos()
+        binding.rvLista.adapter = adapter
+
+        viewmodel.listaTelefonosLiveData().observe(viewLifecycleOwner) {
+            adapter.setData(it)
+        }
     }
 }
