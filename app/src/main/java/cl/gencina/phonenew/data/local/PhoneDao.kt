@@ -13,7 +13,7 @@ interface PhoneDao {
     suspend fun insertBase(item : PhoneEntity)
 
     @Query("UPDATE tabla_telefono SET description =:description , lastPrice = :lastPrice, credit = :credit WHERE id = :id" )
-    suspend fun updatePhone(id: Int, description: String, lastPrice: Int, credit: Boolean, )
+    suspend fun updatePhone(id: Int, description: String?, lastPrice: Int?, credit: Boolean? )
 
     @Query("SELECT * FROM tabla_telefono")
     fun getAll(): LiveData<List<PhoneEntity>>

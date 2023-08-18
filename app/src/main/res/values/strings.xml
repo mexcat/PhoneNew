@@ -8,4 +8,6 @@
     <string name="consulta_id">Consulta %1$s id %2$s</string>
     <string name="acepta_credito">Acepta credito</string>
     <string name="s_lo_efectivo">Sólo efectivo</string>
+    <string name="ingrese_email">Ingrese email</string>
+    <string name="enviar_correo">Enviar correo</string>
 </resources>

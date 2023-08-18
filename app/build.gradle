@@ -65,4 +65,10 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     ksp "androidx.room:room-compiler:$room_version"
+
+    //test android//
+    androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation "androidx.test.ext:truth:1.5.0"
+    testImplementation "androidx.test.ext:truth:1.5.0" // para utilizarlo en test unitario
 }
